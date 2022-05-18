@@ -19,7 +19,12 @@ Route::prefix('postagens')->middleware('auth')->group(function(){
     Route::post("", "PostController@store")->name("postagensinsert");
     Route::put("{id}", "PostController@update")->name("postagensupdate");
     Route::delete("{id}", "PostController@destroy")->name("postagensdelete");
+    // Route::get("", "PostRecentController@index")->name("ultimaspostagens");
 });
+
+Route::get("ultimaspostagens", "PostRecentController@index")->name("ultimaspostagens");
+
+
 Auth::routes();
 
 Route::get('logout', 'Auth\LoginController@logout')->name('logout');
