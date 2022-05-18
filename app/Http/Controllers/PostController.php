@@ -43,7 +43,6 @@ class PostController extends Controller{
         $rules = [
             "category_id" => "required|exists:categories,id",
             "title" => "required|min:2",
-            "post_date" => "required",
             "summary" => "required",
             "text" => "required"
         ];
@@ -54,7 +53,6 @@ class PostController extends Controller{
             "category_id.required" => "O campo categoria deve ser preenchido.",
             "category_id.exists" => "Você deve selecionar uma categoria válida.",
             "summary" => "O campo resumo deve ser preenchido.",
-            "post_date" => "A data da postagem é necessária.",
             "text" => "O campo texto deve ser numérico."
         ];
 
@@ -71,7 +69,6 @@ class PostController extends Controller{
         $post->summary = $request->input("summary");
         $post->text = $request->input("text");
         $post->active = $request->input("active");
-        $post->post_date = $request->input("post_date");
         $post->save();
 
         return redirect()->route("postagens");
@@ -81,7 +78,6 @@ class PostController extends Controller{
         $rules = [
             "category_id" => "required|exists:categories,id",
             "title" => "required|min:2",
-            "post_date" => "required",
             "summary" => "required",
             "text" => "required"
         ];
@@ -92,7 +88,6 @@ class PostController extends Controller{
             "category_id.required" => "O campo categoria deve ser preenchido.",
             "category_id.exists" => "Você deve selecionar uma categoria válida.",
             "summary" => "O campo resumo deve ser preenchido.",
-            "post_date" => "A data da postagem é necessária.",
             "text" => "O campo texto deve ser numérico."
         ];
 
@@ -110,7 +105,6 @@ class PostController extends Controller{
         $post->summary = $request->input("summary");
         $post->text = $request->input("text");
         $post->active = $request->input("active");
-        $post->post_date = $request->input("post_date");
         $post->save();
 
         return redirect()->route("postagens");

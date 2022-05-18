@@ -16,10 +16,27 @@
                 {{ csrf_field() }}
                 <input type="hidden" name="id" value="{{ $category->id }}">
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg-5">
                         <div class="form-group">
-                            <label for="title">Título</label>
-                            <input type="text" name="title" id="title" value="{{ $category->title }}" class="form-control">
+                            <label for="name">Título</label>
+                            <input type="text" name="name" id="name" value="{{ $category->name }}" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="form-group">
+                            <label for="description">Descrição</label>
+                            <input type="text" name="description" id="description" value="{{ $category->description }}" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="form-group">
+                            <label for="active">Situação</label><br>
+                            <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Ativa ou inativa a categoria">
+                                <label class="switch">
+                                <input type="checkbox" name="active" value="1">
+                                <span class="slider round"></span>
+                            </span>
+                            </label>
                         </div>
                     </div>
                 </div>

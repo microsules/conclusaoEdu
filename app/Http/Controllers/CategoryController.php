@@ -45,13 +45,17 @@ class CategoryController extends Controller{
 
         $validator = Validator::make($request->all(), $rules, $messages);
 
-        if($validator->fails()){
-            return redirect()->route("categoriasnovo")->withErrors($validator)->withInput();
+        if($validator->fails()) {
+            return redirect()->route("categoriasnovo")
+                    ->withErrors($validator)
+                    ->withInput();
         }
 
         $category = new Category();
 
-        $category->title = $request->input("name");
+        $category->name = $request->input("name");
+        $category->description = $request->input("description");
+        $category->active = $request->input("active");
         $category->save();
 
         return redirect()->route("categorias");
@@ -76,7 +80,9 @@ class CategoryController extends Controller{
 
         $category = Category::find($id);
 
-        $category->title = $request->input("name");
+        $category->name = $request->input("name");
+        $category->description = $request->input("description");
+        $category->active = $request->input("active");
         $category->save();
 
         return redirect()->route("categorias");

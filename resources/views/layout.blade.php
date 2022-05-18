@@ -11,7 +11,7 @@
     <title>Portal | @yield('title')</title>
 </head>
 <body>
-    <main class="container mt-3">
+    <main class="container mt-3 bg-white">
         @yield('content')
     </main>
     <script src="{{ asset('js/jquery.min.js') }}"></script>
