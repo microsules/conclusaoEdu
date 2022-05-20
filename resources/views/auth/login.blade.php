@@ -1,6 +1,4 @@
-@extends('layout')
 @section('title', 'Login')
-<!-- @section('content') -->
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -14,29 +12,34 @@
     <title>Portal | @yield('title')</title>
 </head>
 <body>
-    <div class="containerLogin">
-        <div class="row">
-            <div class="col-lg-12">
+    <div class="container">
+        <div class="row justify-content-md-center justify-content-center">
+            <div class="formLogin col-5">
+                <div class="row">
+                    <div class="col-12">
+                        <h1>Login</h1>
+                    </div>
+                </div>
                 <form action="{{ route('login') }}" method="POST">
                     {{ csrf_field() }}
                     <div class="row">
-                        <div class="col-lg-6">
+                        <div class="col-12">
                             <div class="form-group">
-                                <label for="email">E-mail</label>
+                                <label class="labelLogin" for="email">E-mail</label>
                                 <input type="text" id="email" name="email" 
                                     class="form-control" placeholder="E-mail">
                             </div>
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-12">
                             <div class="form-group">
                                 <label for="password">Senha</label>
-                                <input type="password" id="password" name="password"
+                                <input type="password" id="password" name="password" placeholder="********"
                                     class="form-control"> 
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-12">
+                        <div class="col-12">
                             <button type="submit" class="btn btn-block btn-success">
                                 Login
                             </button>
@@ -48,5 +51,3 @@
     </div>
 </body>
 </html>
-    
-@endsection

@@ -29,9 +29,11 @@
                             <select name="category_id" id="category_id" class="form-control shadow-sm">
                                 <option value="">Selecione</option>
                                 @foreach($categories as $category)
-                                    <option value="{{ $category->id }}" {{ ($post->category_id == $category->id) ? 'selected' : '' }}>
-                                        {{ $category->name }}
-                                    </option>
+                                    @if($category->active == 1)
+                                        <option value="{{ $category->id }}" {{ ($post->category_id == $category->id) ? 'selected' : '' }}>
+                                            {{ $category->name }}
+                                        </option>
+                                    @endif
                                 @endforeach
                             </select>
                         </div>
@@ -52,18 +54,16 @@
                     </div>
                     <div class="col-lg-2">
                         <div class="form-group">
-                            <label for="active">Situação</label><br>
-                            <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Ativa ou inativa a categoria">
-                                <label class="switch">
-                                <input type="checkbox" name="active" value="{{ ($post->active == 1) ? 'selected' : '' }}" id="active">
-                                <span class="slider round"></span>
-                            </span>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="form-group">
-                            
+                            <label for="active">Status</label>
+                            <select name="active" id="active" class="form-control">
+                                <option selected="selected">Selecione</option>
+                                <option value="1" {{ $post->active ? 'selected' : '' }}>
+                                    Ativa
+                                </option>
+                                <option value="0" {{ !$post->active ? 'selected' : '' }}>
+                                    Inativa
+                                </option>
+                            </select>
                         </div>
                     </div>
                 </div>
