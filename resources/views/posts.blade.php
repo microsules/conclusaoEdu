@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title', 'Postagens')
+@section('title', 'Postagenss')
 @section('content')
     @include('includes.menu')
     <div class="row">
@@ -20,8 +20,8 @@
                     <tr class="table-secondary">
                     @endif
                         <td>{{ $post->id }}</td>
-                        <td>{{ $post->category->name }}</td>
                         <td>{{ $post->title }}</td>
+                        <td>{{ $post->category->name }}</td>
                         <td>{{ $post->summary }}</td>
                         <td>
                             <form onsubmit="return confirmDelete();" action="{{ route('postagensdelete', ['id'=> $post->id]) }}" method="POST">

@@ -7,9 +7,9 @@ containerListas{
 }
 
 .containerLogin{
-    width: 560px;
+    width: 900px;
+    height: 500px;
     margin: auto;
-    background: #fff;
     border-radius: 10px;
     display: -webkit-box;
     display: -webkit-flex;
@@ -41,14 +41,14 @@ containerListas{
     height: 34px;
   }
   
-  /* Hide default HTML checkbox */
+  
   .switch input {
     opacity: 0;
     width: 0;
     height: 0;
   }
   
-  /* The slider */
+  
   .slider {
     position: absolute;
     cursor: pointer;
@@ -87,7 +87,7 @@ containerListas{
     transform: translateX(26px);
   }
   
-  /* Rounded sliders */
+  
   .slider.round {
     border-radius: 34px;
   }

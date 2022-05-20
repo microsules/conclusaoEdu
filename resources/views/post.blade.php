@@ -40,14 +40,14 @@
                         <div class="form-group">
                             <label for="summary">Resumo</label>
                             <textarea class="form-control shadow-sm" rows="3" id="summary" 
-                                name="summary" value="{{ $post->summary }}"></textarea>
+                                name="summary" value="">{{ $post->summary }}</textarea>
                         </div>
                     </div>
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label for="text">Texto</label>
                             <textarea class="form-control shadow-sm" rows="3" id="text" 
-                                name="text" value="{{ $post->text }}"></textarea>
+                                name="text" value="">{{ $post->text }}</textarea>
                         </div>
                     </div>
                     <div class="col-lg-2">
@@ -55,7 +55,7 @@
                             <label for="active">Situação</label><br>
                             <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Ativa ou inativa a categoria">
                                 <label class="switch">
-                                <input type="checkbox" name="active" value="1">
+                                <input type="checkbox" name="active" value="{{ ($post->active == 1) ? 'selected' : '' }}" id="active">
                                 <span class="slider round"></span>
                             </span>
                             </label>
