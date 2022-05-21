@@ -19,30 +19,26 @@
                 Login
             </button>
         </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <table class="table table-hover table-bordered">
-                    <tr>
-                        <th>Data da postagem</th>
-                        <th>Título</th>
-                        <th>Categoria</th>
-                        <th>Resumo</th>
-                    </tr>
-                    @foreach($posts as $post)
-                        @if($post->active)
-                        <tr>
-                        @else
-                        <tr class="table-secondary">
-                        @endif
-                            <td>{{ $post->created_at }}</td>
-                            <td>{{ $post->title }}</td>
-                            <td>{{ $post->category->name }}</td>
-                            <td>{{ $post->summary }}</td>
-                        </tr>
-                    @endforeach
-                </table>
+        @foreach($posts as $post)
+            @if($post->active)
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-5 justify-content-center">
+                                <h1 class="text-dark font-weight-bold">{{ $post->title }}</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <h3 class="text-dark font-weight-bold">{{ $post->text }}</h3>
+                </div>
             </div>
-        </div>
+            @endif
+        @endforeach
+        
+        
     </main>
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/popper.min.js') }}"></script>

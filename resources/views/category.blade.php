@@ -2,7 +2,7 @@
 @include('includes.menu')
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <div class="container ">
+    <div class="container">
         <div class="row">
             <div class="class col-lg-12">
                 @include('includes.errors')

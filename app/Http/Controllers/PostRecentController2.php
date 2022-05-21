@@ -7,11 +7,11 @@ use Validator;
 use App\Http\Controllers\Controller\Auth;
 use App\Post;
 
-class PostRecentController extends Controller{
+class PostRecentController2 extends Controller{
     public function index(){
         $posts = Post::all()->where('active', true)->sortByDesc('created_at')->take(3);
 
-        return view("postsRecent",[
+        return view("postsRecent2",[
             "posts" => $posts
         ]);
     }

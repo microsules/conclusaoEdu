@@ -27,13 +27,13 @@
                             <div class="form-group">
                                 <label class="labelLogin" for="email">E-mail</label>
                                 <input type="text" id="email" name="email" 
-                                    class="form-control" placeholder="E-mail">
+                                    class="form-control" >
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-group">
                                 <label for="password">Senha</label>
-                                <input type="password" id="password" name="password" placeholder="********"
+                                <input type="password" id="password" name="password"
                                     class="form-control"> 
                             </div>
                         </div>

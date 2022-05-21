@@ -24,8 +24,10 @@ Route::prefix('postagens')->middleware('auth')->group(function(){
 Route::prefix('ultimaspostagens')->group(function(){
     Route::get("", "PostRecentController@index")->name("ultimaspostagens");
 });
-// Route::get("", "PostRecentController@index")->name("ultimaspostagens");
 
+Route::prefix('ultimaspostagens2')->group(function(){
+    Route::get("", "PostRecentController2@index")->name("ultimaspostagens2");
+});
 
 Auth::routes();
 
